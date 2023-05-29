@@ -13,6 +13,12 @@ const Main = () => {
   };
 
   useEffect(() => {
+    fetch(`http://www.omdbapi.com/?apikey=c8ed8ebe&s=like`)
+      .then(res => res.json())
+      .then(data => setMovies(data.Search))
+  }, []);
+
+  useEffect(() => {
     if (filmName) {
       fetch('http://www.omdbapi.com/?apikey=c8ed8ebe&s=' + encodeURIComponent(filmName))
       
@@ -27,6 +33,8 @@ const Main = () => {
             setErr(true);
           }
         })
+  
+  
 
         .catch(error => {
           console.log('Error fetching movies:', error);

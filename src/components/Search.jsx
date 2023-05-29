@@ -19,7 +19,7 @@ const Search = ({ onSearch }) => {
                 onChange={handleInput}
                 placeholder="Какой фильм?"
             />
-            <button onClick={handleSearch}>🔎</button>
+            <button onClick={handleSearch}>👁</button>
         </div>
     );
 };
